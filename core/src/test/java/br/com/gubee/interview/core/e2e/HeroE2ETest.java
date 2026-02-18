@@ -1,7 +1,7 @@
 package br.com.gubee.interview.core.e2e;
 
-import br.com.gubee.interview.model.enums.Race;
-import br.com.gubee.interview.model.request.CreateHeroRequest;
+import br.com.gubee.interview.domain.model.Race;
+import br.com.gubee.interview.core.infrastructure.input.web.request.CreateHeroRequest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

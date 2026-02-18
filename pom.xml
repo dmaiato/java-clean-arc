@@ -41,14 +41,14 @@
 
     <modules>
         <module>core</module>
-        <module>model</module>
+        <module>domain</module>
     </modules>
 
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>gubee</groupId>
-                <artifactId>interview-model</artifactId>
+                <artifactId>interview-domain</artifactId>
                 <version>${project.version}</version>
             </dependency>
 

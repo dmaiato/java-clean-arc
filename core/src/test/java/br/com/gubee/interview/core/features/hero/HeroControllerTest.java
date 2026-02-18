@@ -1,7 +1,7 @@
 package br.com.gubee.interview.core.features.hero;
 
-import br.com.gubee.interview.model.enums.Race;
-import br.com.gubee.interview.model.request.CreateHeroRequest;
+import br.com.gubee.interview.domain.model.Race;
+import br.com.gubee.interview.core.infrastructure.input.web.request.CreateHeroRequest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,11 +12,11 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 
-import br.com.gubee.interview.model.Hero;
+import br.com.gubee.interview.domain.model.Hero;
 
-import br.com.gubee.interview.model.PowerStats;
+import br.com.gubee.interview.domain.model.PowerStats;
 
-import br.com.gubee.interview.model.request.ReturnHeroWithStatsRequest;
+import br.com.gubee.interview.core.infrastructure.input.web.dto.ReturnHeroWithStatsRequest;
 
 
 import java.util.UUID;

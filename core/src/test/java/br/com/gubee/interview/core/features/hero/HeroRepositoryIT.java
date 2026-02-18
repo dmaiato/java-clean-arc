@@ -1,9 +1,10 @@
 package br.com.gubee.interview.core.features.hero;
 
 import br.com.gubee.interview.core.features.powerstats.PowerStatsRepository;
-import br.com.gubee.interview.model.Hero;
-import br.com.gubee.interview.model.PowerStats;
-import br.com.gubee.interview.model.enums.Race;
+import br.com.gubee.interview.core.infrastructure.output.persistence.repository.HeroRepository;
+import br.com.gubee.interview.domain.model.Hero;
+import br.com.gubee.interview.domain.model.PowerStats;
+import br.com.gubee.interview.domain.model.Race;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

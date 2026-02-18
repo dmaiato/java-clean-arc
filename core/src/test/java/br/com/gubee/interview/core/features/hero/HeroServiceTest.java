@@ -1,20 +1,18 @@
 package br.com.gubee.interview.core.features.hero;
 
 import br.com.gubee.interview.core.features.powerstats.PowerStatsService;
-import br.com.gubee.interview.model.Hero;
-import br.com.gubee.interview.model.PowerStats;
-import br.com.gubee.interview.model.enums.Race;
-import br.com.gubee.interview.model.request.CreateHeroRequest;
-import br.com.gubee.interview.model.request.ReturnHeroWithStatsRequest;
+import br.com.gubee.interview.core.infrastructure.output.persistence.repository.HeroRepository;
+import br.com.gubee.interview.domain.model.Hero;
+import br.com.gubee.interview.domain.model.PowerStats;
+import br.com.gubee.interview.domain.model.Race;
+import br.com.gubee.interview.core.infrastructure.input.web.request.CreateHeroRequest;
+import br.com.gubee.interview.core.infrastructure.input.web.dto.ReturnHeroWithStatsRequest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ActiveProfiles;
 
 import java.time.Instant;
 import java.util.UUID;
