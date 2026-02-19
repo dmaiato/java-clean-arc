@@ -25,7 +25,7 @@ public class HeroWithStatsResponse {
         this.id = hero.getId();
         this.name = hero.getName();
         this.race = hero.getRace();
-        this.enabled = hero.getEnabled();
+        this.enabled = hero.isEnabled();
         this.strength = stats.getStrength();
         this.agility = stats.getAgility();
         this.dexterity = stats.getDexterity();
