@@ -41,14 +41,16 @@
 
     <modules>
         <module>core</module>
-        <module>domain</module>
+        <module>configuration</module>
+        <module>adapters/web</module>
+        <module>adapters/persistence</module>
     </modules>
 
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>gubee</groupId>
-                <artifactId>interview-domain</artifactId>
+                <artifactId>interview-core</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
