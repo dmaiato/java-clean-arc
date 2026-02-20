@@ -12,7 +12,7 @@ public class HeroEntity {
     private String name;
     private Race race;
     private UUID powerStatsId;
+    private boolean enabled;
     private Instant createdAt;
     private Instant updatedAt;
-    private boolean enabled;
 }

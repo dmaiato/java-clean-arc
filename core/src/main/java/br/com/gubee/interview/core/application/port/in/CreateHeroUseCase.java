@@ -1,22 +1,19 @@
 package br.com.gubee.interview.core.application.port.in;
 
 import br.com.gubee.interview.core.domain.model.Race;
-import lombok.Builder;
-import lombok.Getter;
 
 import java.util.UUID;
 
 public interface CreateHeroUseCase {
-    UUID execute(Command command);
+    UUID execute(CreateHeroCommand command);
 
-    @Builder
-    @Getter
-    class Command {
-        private final String name;
-        private final Race race;
-        private final int strength;
-        private final int agility;
-        private final int dexterity;
-        private final int intelligence;
+    record CreateHeroCommand(
+            String name,
+            Race race,
+            int strength,
+            int agility,
+            int dexterity,
+            int intelligence
+    ) {
     }
 }

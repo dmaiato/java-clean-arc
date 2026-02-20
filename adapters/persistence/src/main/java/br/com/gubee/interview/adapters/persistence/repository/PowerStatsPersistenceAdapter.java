@@ -20,7 +20,7 @@ import java.util.UUID;
 
 @Repository
 @RequiredArgsConstructor
-public class PowerStatsRepositoryImpl implements SavePowerStatsPort, FindPowerStatsPort, DeletePowerStatsPort {
+public class PowerStatsPersistenceAdapter implements SavePowerStatsPort, FindPowerStatsPort, DeletePowerStatsPort {
 
     private static final String CREATE_POWER_STATS_QUERY = "INSERT INTO power_stats" +
             " (id, strength, agility, dexterity, intelligence, created_at, updated_at)" +

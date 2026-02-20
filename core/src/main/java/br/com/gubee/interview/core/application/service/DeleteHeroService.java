@@ -20,9 +20,9 @@ public class DeleteHeroService implements DeleteHeroUseCase {
 
     @Override
     @Transactional
-    public void execute(Command command) {
-        var hero = findHeroPort.findById(command.getId())
-                .orElseThrow(() -> new NoSuchElementException("Hero not found with ID: " + command.getId()));
+    public void execute(DeleteHeroCommand command) {
+        var hero = findHeroPort.findById(command.id())
+                .orElseThrow(() -> new NoSuchElementException("Hero not found with ID: " + command.id()));
 
         deleteHeroPort.deleteById(hero.getId());
         deletePowerStatsPort.deleteById(hero.getPowerStatsId());

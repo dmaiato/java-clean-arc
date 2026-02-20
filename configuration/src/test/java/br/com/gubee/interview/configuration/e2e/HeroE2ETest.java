@@ -1,4 +1,4 @@
-package br.com.gubee.interview.launcher.e2e;
+package br.com.gubee.interview.configuration.e2e;
 
 import br.com.gubee.interview.core.domain.model.Race;
 import br.com.gubee.interview.adapters.web.request.CreateHeroRequest;

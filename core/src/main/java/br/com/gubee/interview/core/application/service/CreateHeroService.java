@@ -20,16 +20,16 @@ public class CreateHeroService implements CreateHeroUseCase {
 
     @Override
     @Transactional
-    public UUID execute(Command command) {
+    public UUID execute(CreateHeroCommand command) {
         var powerStats = PowerStats.create(
-                command.getStrength(),
-                command.getAgility(),
-                command.getDexterity(),
-                command.getIntelligence()
+                command.strength(),
+                command.agility(),
+                command.dexterity(),
+                command.intelligence()
         );
         savePowerStatsPort.save(powerStats);
 
-        var hero = Hero.create(command.getName(), command.getRace(), powerStats.getId());
+        var hero = Hero.create(command.name(), command.race(), powerStats.getId());
         saveHeroPort.save(hero);
 
         return hero.getId();

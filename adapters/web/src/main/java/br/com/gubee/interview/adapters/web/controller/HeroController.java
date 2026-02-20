@@ -38,15 +38,13 @@ public class HeroController {
 
     @GetMapping("/{id}")
     public ResponseEntity<HeroWithStatsResponse> findById(@PathVariable UUID id) {
-        var query = FindHeroByIdUseCase.Query.builder().id(id).build();
-        var output = findHeroByIdUseCase.execute(query);
+        var output = findHeroByIdUseCase.execute(id);
         return ResponseEntity.ok(HeroWithStatsResponse.from(output));
     }
 
     @GetMapping()
     public ResponseEntity<HeroWithStatsResponse> findByName(@RequestParam String name) {
-        var query = FindHeroByNameUseCase.Query.builder().name(name).build();
-        var output = findHeroByNameUseCase.execute(query);
+        var output = findHeroByNameUseCase.execute(name);
         return ResponseEntity.ok(HeroWithStatsResponse.from(output));
     }
 
@@ -59,7 +57,7 @@ public class HeroController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteHero(@PathVariable UUID id) {
-        var command = DeleteHeroUseCase.Command.builder().id(id).build();
+        var command = new DeleteHeroUseCase.DeleteHeroCommand(id);
         deleteHeroUseCase.execute(command);
         return noContent().build();
     }

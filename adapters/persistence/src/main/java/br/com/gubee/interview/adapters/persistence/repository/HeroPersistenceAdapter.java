@@ -21,7 +21,7 @@ import java.util.UUID;
 
 @Repository
 @RequiredArgsConstructor
-public class HeroRepositoryImpl implements SaveHeroPort, FindHeroPort, UpdateHeroPort, DeleteHeroPort {
+public class HeroPersistenceAdapter implements SaveHeroPort, FindHeroPort, UpdateHeroPort, DeleteHeroPort {
 
     private static final String CREATE_HERO_QUERY = "INSERT INTO hero" +
             " (id, name, race, power_stats_id, created_at, updated_at, enabled)" +

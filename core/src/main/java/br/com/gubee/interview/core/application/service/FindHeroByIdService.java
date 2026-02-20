@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.NoSuchElementException;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -19,12 +20,12 @@ public class FindHeroByIdService implements FindHeroByIdUseCase {
 
     @Override
     @Transactional(readOnly = true)
-    public HeroWithStatsResult execute(Query query) {
-        var hero = findHeroPort.findById(query.getId())
-                .orElseThrow(() -> new NoSuchElementException("Hero not found with ID: " + query.getId()));
+    public HeroWithStatsResult execute(UUID id) {
+        var hero = findHeroPort.findById(id)
+                .orElseThrow(() -> new NoSuchElementException("Hero not found with ID: " + id));
 
         var stats = findPowerStatsPort.findById(hero.getPowerStatsId())
-                .orElseThrow(() -> new NoSuchElementException("PowerStats not found for Hero ID: " + query.getId()));
+                .orElseThrow(() -> new NoSuchElementException("PowerStats not found for Hero ID: " + id));
 
         return new HeroWithStatsResult(hero, stats);
     }

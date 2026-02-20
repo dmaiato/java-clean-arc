@@ -19,12 +19,12 @@ public class FindHeroByNameService implements FindHeroByNameUseCase {
 
     @Override
     @Transactional(readOnly = true)
-    public HeroWithStatsResult execute(Query query) {
-        var hero = findHeroPort.findByName(query.getName())
-                .orElseThrow(() -> new NoSuchElementException("Hero not found with name: " + query.getName()));
+    public HeroWithStatsResult execute(String name) {
+        var hero = findHeroPort.findByName(name)
+                .orElseThrow(() -> new NoSuchElementException("Hero not found with name: " + name));
 
         var stats = findPowerStatsPort.findById(hero.getPowerStatsId())
-                .orElseThrow(() -> new NoSuchElementException("PowerStats not found for Hero name: " + query.getName()));
+                .orElseThrow(() -> new NoSuchElementException("PowerStats not found for Hero name: " + name));
 
         return new HeroWithStatsResult(hero, stats);
     }

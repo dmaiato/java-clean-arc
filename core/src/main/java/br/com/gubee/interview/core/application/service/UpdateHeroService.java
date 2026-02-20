@@ -19,16 +19,16 @@ public class UpdateHeroService implements UpdateHeroUseCase {
 
     @Override
     @Transactional
-    public Hero execute(Command command) {
-        var hero = findHeroPort.findById(command.getId())
-                .orElseThrow(() -> new NoSuchElementException("Hero not found with ID: " + command.getId()));
+    public Hero execute(UpdateHeroCommand command) {
+        var hero = findHeroPort.findById(command.id())
+                .orElseThrow(() -> new NoSuchElementException("Hero not found with ID: " + command.id()));
 
-        if (command.getName() != null && command.getRace() != null) {
-            hero.updateDetails(command.getName(), command.getRace());
+        if (command.name() != null && command.race() != null) {
+            hero.updateDetails(command.name(), command.race());
         }
 
-        if (command.getEnabled() != null) {
-            if (command.getEnabled()) {
+        if (command.enabled() != null) {
+            if (command.enabled()) {
                 hero.enable();
             } else {
                 hero.disable();
